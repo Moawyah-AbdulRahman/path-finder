@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sketch</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+  <script src="libraries/PriorityQueue.js"></script>
+  <script src="libraries/Queue.js"></script>
+
+</head>
+
+<body>
+  <script src="classes/Grid.js"></script>
+  <script src="classes/algorithms/AStar.js"></script>
+  <script src="classes/algorithms/BFS.js"></script>
+  <script src="classes/algorithms/DFS.js"></script>
+  <script src="sketch.js"></script>
+  <script src="control.js"></script>
+
+  <div>
+    <button id="put_start" onclick="putStart()">Put Start</button>
+    <button id="put_goal" onclick="putGoal()">Put Goal</button>
+    <button id="put_blocks" onclick="putBlocks()">Put Blocks</button>
+  </div>
+  <button onclick="start()">Start</button>
+  <button onclick="pauseResume()">Pause/Resume</button>
+
+  <div id="frame_rate_div">
+    <label for="frame_rate">Frame rate:</label>
+    <input type="range" id="frame_rate" name="frame_rate" min="2" max="50" value="20" oninput="changeSpeed()">
+  </div>
+  <label for="algorithm">Algorithm:</label>
+  <select name="algorithm" id="algorithm">
+    <option value="a_star">A*</option>
+    <option value="bfs">BFS</option>
+    <option value="dfs">DFS</option>
+  </select>
+  <div>
+    <button id="begin_intialization" onclick="beginIntialization()">Initialize grid</button>
+    <div id="init_grid_div">
+      <br>
+      <label for="rows">rows:</label>
+      <input type="number" id="rows" name="rows" value="25">
+
+      <label for="cols">columns:</label>
+      <input type="number" id="cols" name="cols" value="40">
+
+      <label for="length">cell length:</label>
+      <input type="number" id="length" name="length" value="20">
+
+      <button onclick="endInitialization()">submit</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

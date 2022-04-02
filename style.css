@@ -1,0 +1,40 @@
+html, body {
+  margin: 10;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+div{
+  display: inline;
+}
+
+input{
+  width: 35px;
+  display: inline;
+  margin-bottom: 25px;
+}
+#init_grid_div{
+  display: none;
+}
+
+#frame_rate{
+  width: 150px;
+  -webkit-appearance: none;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  border-radius: 15px;
+}
+#frame_rate:hover{
+  opacity: 1;
+}
+#frame_rate::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #6d0088;
+  border-radius: 15px;
+}
