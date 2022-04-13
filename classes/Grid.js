@@ -1,4 +1,3 @@
-
 class Grid {
     static OPEN = 0;
     static START = 1;
@@ -47,7 +46,7 @@ class Grid {
     }
 
 
-    //public
+    
     setStartingPoint(cell) {
         
         if(this.start!=null){
@@ -59,7 +58,7 @@ class Grid {
         this.updatedCells.push([cell[0], cell[1]]);
     }
 
-    //public
+    
     setGoalPoint(cell) {
 
         if(this.goal!=null){
@@ -70,8 +69,8 @@ class Grid {
         this.goal = [cell[0], cell[1]];
         this.updatedCells.push([cell[0], cell[1]]);
     }
-
-    //public
+    
+    
     setPath(points){
         for(const point of points){
             this.matrix[point[0]][point[1]]=Grid.PATH;
@@ -80,24 +79,25 @@ class Grid {
         this.setStartingPoint(this.start);
         this.setGoalPoint(this.goal);
     }
-    //public 
+    
+    
     setBlocked(cell) {
         this.matrix[cell[0]][cell[1]] = Grid.BLOCKED;
         this.updatedCells.push([cell[0],cell[1]]);
     }
 
-    //public
+    
     isInQueue(cell){
         return this.matrix[cell[0]][cell[1]] == Grid.IN_QUEUE;
     }
-    //public 
+    
+    
     setClosed(cell) {
         if (this.inRange(cell[0], cell[1]))
             this.matrix[cell[0]][cell[1]] = Grid.CLOSED;
         this.updatedCells.push([cell[0],cell[1]]);
     }
     
-    //public
     isOpen(cell) {
         return this.matrix[cell[0]][cell[1]] == Grid.OPEN;
     }
@@ -117,13 +117,12 @@ class Grid {
     //public
     draw() {
         for(const cell of this.updatedCells){
-            this.drawCell(cell[0],cell[1]);
+            this.#drawCell(cell[0],cell[1]);
         }
         this.updatedCells=[];
     }
 
-    //private
-    drawCell(i, j) {
+    #drawCell(i, j) {
         let x = j * this.cellLength;
         let y = i * this.cellLength;
         stroke(0, 0, 0);

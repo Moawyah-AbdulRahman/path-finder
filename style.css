@@ -1,21 +1,29 @@
 html, body {
   margin: 10;
   padding: 0;
+  background-image: url("pictures\\BackGround.jpg");
 }
 
 canvas {
   display: block;
+  margin: 3% auto;
 }
 
 div{
   display: inline;
+  color: #ffffff;
 }
 
 input{
-  width: 35px;
+  width: 50px;
   display: inline;
-  margin-bottom: 25px;
+  margin:  1.5%;
 }
+
+.btn{
+  margin: 0 1.5%;
+}
+
 #init_grid_div{
   display: none;
 }

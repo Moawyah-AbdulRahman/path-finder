@@ -7,6 +7,8 @@
 
   <title>Path Finder</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <script src="libraries/p5.min.js"></script>
@@ -24,28 +26,26 @@
   <script src="sketch.js"></script>
   <script src="control.js"></script>
 
-  <div>
-    <button id="put_start" onclick="putStart()">Put Start</button>
-    <button id="put_goal" onclick="putGoal()">Put Goal</button>
-    <button id="put_blocks" onclick="putBlocks()">Put Blocks</button>
-  </div>
-  <button onclick="start()">Start</button>
-  <button onclick="pauseResume()">Pause/Resume</button>
 
-  <div id="frame_rate_div">
-    <label for="frame_rate">Frame rate:</label>
+  <div class="container" id="control_space">
+    <button class="btn btn-light" id="put_start" onclick="putStart()">Put Start</button>
+    <button class="btn btn-light " id="put_goal" onclick="putGoal()">Put Goal</button>
+    <button class="btn btn-light " id="put_blocks" onclick="putBlocks()">Put Blocks</button>
+    <button class="btn btn-light" onclick="start()">Start</button>
+    <button class="btn btn-light " onclick="pauseResume()">Pause/Resume</button>
+    <label for="frame_rate">Speed:</label>
     <input type="range" id="frame_rate" name="frame_rate" min="2" max="50" value="20" oninput="changeSpeed()">
-  </div>
-  <label for="algorithm">Algorithm:</label>
-  <select name="algorithm" id="algorithm">
-    <option value="a_star">A*</option>
-    <option value="bfs">BFS</option>
-    <option value="dfs">DFS</option>
-  </select>
-  <div>
-    <button id="begin_intialization" onclick="beginIntialization()">Initialize grid</button>
+
+    <label for="algorithm">Algorithm:</label>
+    <select name="algorithm" id="algorithm">
+      <option value="a_star">A*</option>
+      <option value="bfs">BFS</option>
+      <option value="dfs">DFS</option>
+    </select>
+
+    <button class="btn btn-light" id="begin_intialization" onclick="beginIntialization()">Initialize grid</button>
+    <br>
     <div id="init_grid_div">
-      <br>
       <label for="rows">rows:</label>
       <input type="number" id="rows" name="rows" value="25">
 
@@ -55,8 +55,13 @@
       <label for="length">cell length:</label>
       <input type="number" id="length" name="length" value="20">
 
-      <button onclick="endInitialization()">submit</button>
+      <button class="btn btn-light" onclick="endInitialization()">submit</button>
     </div>
+
+  </div>
+
+
+  <div id="grid_container">
   </div>
 
 </body>

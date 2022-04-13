@@ -6,9 +6,12 @@ let algorithm;
 let canvasHeight;
 let canvasWidth;
 function setup() {
+  
   canvasHeight = numOfRows * cellLength + 2 + 40;
   canvasWidth = numOfColumns * cellLength + 2;
-  createCanvas(canvasWidth, canvasHeight);
+  
+  let myCanvas = createCanvas(canvasWidth, canvasHeight);
+  myCanvas.parent("grid_container");
 
   let framesSpeed=document.getElementById('frame_rate').value;
   frameRate(parseInt(framesSpeed));
@@ -64,7 +67,9 @@ function mouseDragged(event) {
 
   let col = parseInt(mouseX / cellLength);
   let row = parseInt(mouseY / cellLength);
+
   if(myGrid.inRange(row, col) && gridClickMode == PUT_BLOCKS){
-    myGrid.setBlocked([row, col]);
+    if(myGrid.isOpen([row,col]))
+      myGrid.setBlocked([row, col]);
   }
 }

@@ -9,8 +9,8 @@ class AStar {
     //a, b:: [i, j, actual distance from start], goal::[i,j]
     //heuristic:: function(cell, goal)
     static compare(a, b, goal, heuristic) {
-        let distA = a[2] + heuristic(a, goal);
-        let distB = b[2] + heuristic(b, goal);
+        let distA = a[2] + heuristic(a, goal)*0.99;
+        let distB = b[2] + heuristic(b, goal)*0.99;
         return distA - distB;
     }
 
